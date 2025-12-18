@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Daily Challenge</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "code-bg": "#2c241b", 
+                        "surface-dark": "#2f261f",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "mono": ["Courier New", "Courier", "monospace"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white font-display antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 pt-6 pb-2 z-10 bg-background-light dark:bg-background-dark">
+<button class="flex size-10 items-center justify-center rounded-full text-gray-500 hover:bg-gray-200 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<h2 class="text-base font-bold leading-tight tracking-wide uppercase text-gray-500 dark:text-gray-400">Daily Challenge</h2>
+<div class="flex size-10 items-center justify-end">
+<!-- Placeholder for balance spacing or help icon -->
+<span class="material-symbols-outlined text-gray-500">help_outline</span>
+</div>
+</header>
+<!-- Progress Bar -->
+<div class="px-6 py-2 w-full">
+<div class="flex justify-between items-end mb-2">
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">Question 3 of 5</p>
+<p class="text-xs font-bold text-primary">60%</p>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-[#3e3226] rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 ease-out" style="width: 60%"></div>
+</div>
+</div>
+<!-- Main Scrollable Content -->
+<main class="flex-1 flex flex-col px-6 py-4 overflow-y-auto pb-32">
+<!-- Question Text -->
+<div class="mb-6 animate-fade-in-up">
+<p class="text-xl md:text-2xl font-bold leading-snug text-gray-900 dark:text-white">
+                    What is the output of the following code?
+                </p>
+</div>
+<!-- Code Block Card -->
+<div class="mb-8 rounded-xl bg-gray-100 dark:bg-code-bg border border-gray-200 dark:border-white/5 p-5 shadow-sm overflow-hidden relative group">
+<!-- Syntax Highlighting Simulation -->
+<div class="font-mono text-sm md:text-base leading-relaxed text-gray-800 dark:text-gray-300">
+<div class="flex">
+<span class="text-gray-400 select-none pr-4 text-right w-6">1</span>
+<span>x <span class="text-primary">=</span> [1, 2, 3]</span>
+</div>
+<div class="flex">
+<span class="text-gray-400 select-none pr-4 text-right w-6">2</span>
+<span><span class="text-primary font-bold">print</span>(x[-1])</span>
+</div>
+</div>
+<!-- Copy/Language Badge -->
+<div class="absolute top-2 right-2 opacity-50 text-[10px] uppercase font-bold tracking-wider bg-black/20 px-2 py-1 rounded">Python</div>
+</div>
+<!-- Answer Options -->
+<form class="flex flex-col gap-3">
+<!-- Option 1 -->
+<label class="group relative flex cursor-pointer items-center gap-4 rounded-xl border-2 border-gray-200 dark:border-[#3e3226] p-4 transition-all hover:bg-gray-50 dark:hover:bg-[#2c241b]">
+<input class="peer sr-only" name="quiz-answer" type="radio" value="1"/>
+<div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-gray-300 dark:border-gray-500 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<div class="h-2.5 w-2.5 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+</div>
+<div class="flex grow flex-col">
+<p class="font-mono text-base font-medium text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white">1</p>
+</div>
+</label>
+<!-- Option 2 (Selected State) -->
+<label class="group relative flex cursor-pointer items-center gap-4 rounded-xl border-2 border-primary bg-primary/5 dark:bg-primary/10 p-4 transition-all">
+<input checked="" class="peer sr-only" name="quiz-answer" type="radio" value="3"/>
+<div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-primary transition-colors shadow-sm shadow-primary/30">
+<div class="h-2.5 w-2.5 rounded-full bg-white opacity-100"></div>
+</div>
+<div class="flex grow flex-col">
+<p class="font-mono text-base font-medium text-gray-900 dark:text-white">3</p>
+</div>
+<!-- Optional: visual checkmark for selected -->
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</label>
+<!-- Option 3 -->
+<label class="group relative flex cursor-pointer items-center gap-4 rounded-xl border-2 border-gray-200 dark:border-[#3e3226] p-4 transition-all hover:bg-gray-50 dark:hover:bg-[#2c241b]">
+<input class="peer sr-only" name="quiz-answer" type="radio" value="IndexError"/>
+<div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-gray-300 dark:border-gray-500 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<div class="h-2.5 w-2.5 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+</div>
+<div class="flex grow flex-col">
+<p class="font-mono text-base font-medium text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white">IndexError</p>
+</div>
+</label>
+<!-- Option 4 -->
+<label class="group relative flex cursor-pointer items-center gap-4 rounded-xl border-2 border-gray-200 dark:border-[#3e3226] p-4 transition-all hover:bg-gray-50 dark:hover:bg-[#2c241b]">
+<input class="peer sr-only" name="quiz-answer" type="radio" value="list"/>
+<div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-gray-300 dark:border-gray-500 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<div class="h-2.5 w-2.5 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+</div>
+<div class="flex grow flex-col">
+<p class="font-mono text-base font-medium text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white">[1, 2]</p>
+</div>
+</label>
+</form>
+</main>
+<!-- Sticky Bottom Action Area -->
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark dark:to-transparent pt-12">
+<button class="w-full rounded-xl bg-primary py-4 text-center font-bold text-white text-lg shadow-lg shadow-primary/25 hover:bg-primary/90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group">
+                Submit Answer
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>
