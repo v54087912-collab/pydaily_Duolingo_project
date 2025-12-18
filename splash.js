@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Redirect after animation
         setTimeout(() => {
             clearInterval(interval);
-            window.location.href = '../login_screen/code.html';
+            window.location.href = 'login_screen/code.html';
         }, 2500);
     }
 });

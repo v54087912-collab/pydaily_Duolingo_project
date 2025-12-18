@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Navigation Logic
     if (backButton) {
         backButton.addEventListener('click', () => {
-            window.location.href = '../splash_screen/code.html';
+            window.location.href = '../index.html';
         });
     }
 
