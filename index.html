@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PyDaily Splash Screen</title>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#30e87a",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+  </head>
+<body class="font-display antialiased text-slate-50 bg-background-light dark:bg-background-dark min-h-screen flex flex-col overflow-hidden selection:bg-primary selection:text-background-dark">
+<div class="relative flex flex-grow h-full w-full flex-col items-center justify-between">
+<!-- Ambient Background Effects -->
+<!-- Primary Glow Top Center -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+<!-- Subtle Bottom Gradient -->
+<div class="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-background-dark via-background-dark/95 to-transparent pointer-events-none z-0"></div>
+<!-- Main Content Area: Centered vertically in available space -->
+<div class="flex-1 flex flex-col items-center justify-center w-full px-6 z-10 gap-10">
+<!-- Mascot Wrapper -->
+<div class="relative group cursor-default">
+<!-- Pulsing Glow Ring -->
+<div class="absolute -inset-8 bg-primary/20 rounded-full blur-2xl opacity-60 animate-pulse"></div>
+<!-- Mascot Image Container -->
+<div class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-[2.5rem] bg-gradient-to-br from-[#1a2c23] to-background-dark border border-white/5 flex items-center justify-center shadow-2xl shadow-primary/10 overflow-hidden transform transition-transform duration-700 hover:scale-105 bg-background-dark/50">
+<div class="w-full h-full bg-center bg-cover" data-alt="Friendly 3D robot mascot illustration on a dark background" style="background-image: url('assets/robot.png');">
+</div>
+</div>
+<!-- Floating Badge Icon -->
+<div class="absolute -bottom-3 -right-3 w-10 h-10 bg-primary rounded-2xl rotate-3 border-4 border-background-dark flex items-center justify-center shadow-lg overflow-hidden">
+<img src="assets/icon.png" alt="Icon" class="w-6 h-6 object-contain">
+</div>
+</div>
+<!-- Typography Group -->
+<div class="flex flex-col items-center text-center space-y-3">
+<h1 class="text-5xl sm:text-6xl font-bold text-white tracking-tight drop-shadow-md">
+                    PyDaily
+                </h1>
+<div class="flex items-center gap-2">
+<span class="h-px w-6 bg-primary/50"></span>
+<p class="text-slate-400 text-lg font-medium tracking-wide">Learn Python Daily</p>
+<span class="h-px w-6 bg-primary/50"></span>
+</div>
+</div>
+</div>
+<!-- Footer Area: Progress & Meta Info -->
+<div class="w-full px-8 pb-12 pt-4 flex flex-col items-center gap-8 z-10">
+<!-- Loading Indicator Component -->
+<div class="w-full max-w-[260px] flex flex-col gap-2">
+<div class="flex justify-between items-end px-1">
+<span class="text-[10px] text-primary font-bold uppercase tracking-[0.2em]">Loading Modules</span>
+<!-- Animated Dots using text -->
+<span class="text-[10px] text-primary/80 font-mono">...</span>
+</div>
+<!-- Progress Bar Track -->
+<div class="h-2 w-full bg-[#1c2e24] rounded-full overflow-hidden border border-white/5">
+<!-- Progress Bar Fill -->
+<div class="h-full bg-primary shadow-[0_0_12px_rgba(48,232,122,0.6)] w-[65%] rounded-full relative">
+<!-- Shimmer Effect -->
+<div class="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 opacity-50"></div>
+</div>
+</div>
+</div>
+<!-- Version Meta -->
+<div class="flex flex-col items-center gap-1">
+<p class="text-white/20 text-xs font-normal font-mono">v2.4.0</p>
+</div>
+</div>
+</div>
+</body></html>
