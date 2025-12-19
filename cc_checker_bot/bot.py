@@ -42,7 +42,11 @@ async def check_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handles text messages that match the format."""
-    text = update.message.text
+    message = update.effective_message
+    if not message or not message.text:
+        return
+
+    text = message.text
     if "|" in text:
         await process_check(update, text)
     else:
