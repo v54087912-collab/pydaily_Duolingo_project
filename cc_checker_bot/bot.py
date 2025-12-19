@@ -55,6 +55,23 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             text="Invalid format. Please use: cc|mm|yy|cvv\nOr start with /check"
         )
 
+def get_simulated_status(cvv: str):
+    """
+    Determines a simulated 'Live' or 'Dead' status based on the CVV.
+    This is for educational/template purposes only.
+    """
+    try:
+        # Simple deterministic logic for demonstration:
+        # If CVV ends with an even digit -> Live
+        # If CVV ends with an odd digit -> Dead
+        last_digit = int(cvv[-1])
+        if last_digit % 2 == 0:
+            return "Live ✅", "Approved (Mock)"
+        else:
+            return "Dead ❌", "Declined (Mock)"
+    except (ValueError, IndexError):
+        return "Unknown ❓", "Format Error"
+
 async def process_check(update: Update, text: str):
     """Parses input and simulates an API call."""
     parts = text.split('|')
@@ -87,16 +104,19 @@ async def process_check(update: Update, text: str):
         response = requests.get(api_url, params=params)
         data = response.json()
 
+        sim_status, sim_message = get_simulated_status(cvv)
+
         # Simulating a result based on the API response
         reply_text = (
-            f"Checked Card: {cc[:6]}******{cc[-4:] if len(cc) > 4 else ''}\n"
-            f"Status: API Call Successful (Mock)\n"
+            f"<b>Card Checked</b>\n"
+            f"CC: <code>{cc[:6]}******{cc[-4:] if len(cc) > 4 else ''}</code>\n"
+            f"Status: {sim_status}\n"
+            f"Result: {sim_message}\n"
             f"Response Origin: {data.get('origin')}\n\n"
-            "This bot is a template. It does not perform real credit card validation.\n"
-            "It successfully contacted the mock API."
+            "<i>This bot is a template. It does not perform real credit card validation.</i>"
         )
 
-        await update.message.reply_text(reply_text)
+        await update.message.reply_text(reply_text, parse_mode='HTML')
 
     except Exception as e:
         await update.message.reply_text(f"Error checking: {e}")
