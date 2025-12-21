@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Practice with AI</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#30e87a",
+                        "primary-content": "#062d16",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                        "surface-dark": "#1a2c23",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased">
+<!-- Main Container -->
+<div class="relative flex h-full min-h-screen w-full flex-col bg-background-light dark:bg-background-dark transition-colors duration-200 overflow-hidden">
+<!-- Header / Skip -->
+<div class="flex items-center w-full p-6 pt-8 justify-end z-10">
+<a href="../home_dashboard_3/index.html" class="group flex items-center justify-center rounded-full px-4 py-2 text-sm font-bold text-slate-500 dark:text-slate-400 hover:bg-black/5 dark:hover:bg-white/10 transition-all">
+                Skip
+            </a>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 flex flex-col items-center justify-center px-6 pb-4 w-full max-w-md mx-auto">
+<!-- Card / Image Area -->
+<div class="w-full relative group">
+<!-- Abstract Glow Behind Image -->
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-teal-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+<!-- Main Image Container -->
+<div class="relative w-full aspect-[4/5] sm:aspect-square bg-surface-dark rounded-2xl overflow-hidden shadow-2xl border border-white/5">
+<div class="w-full h-full bg-center bg-cover bg-no-repeat transform hover:scale-105 transition-transform duration-700 ease-out" data-alt="Futuristic 3D robot mascot holding a python code symbol glowing green" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKY79aIE8L_jzk4KwW8SLLUkYlJEIN0s3dpqeRqqnmnqvOxr9CPhT4AVb2KL7hXw8JPnExjXRLvts5-bjRIvHSQRHf4ZSxFWG74uYay87c0L1kCTgmlE-j_Md61_JRN5cc5a5Uz991pqRqdld5XNyVNO_qbgUYfrRuPJLKN9f8ktq9dRzhr4AIaaco8aZQVjg_LXQhUMdgHcj2Pxgd55u_CQJMeMapIlm3XjOo9b91HZdgel5lJ16wrczULkmnkmmVHXOVDV5_cz93");'>
+<!-- Overlay for text readability if image is busy, though we keep text outside mostly -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent"></div>
+</div>
+<!-- Floating Badge Example -->
+<div class="absolute top-4 right-4 bg-background-dark/80 backdrop-blur-md border border-primary/30 rounded-full px-3 py-1.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">smart_toy</span>
+<span class="text-xs font-bold text-white tracking-wide">AI TUTOR</span>
+</div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="mt-10 flex flex-col items-center text-center w-full">
+<h1 class="text-slate-900 dark:text-white text-[32px] sm:text-[40px] font-bold leading-[1.1] tracking-tight mb-4">
+                    Practice with <span class="text-primary">AI</span>
+</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg font-normal leading-relaxed max-w-[320px]">
+                    Solve coding challenges with an intelligent assistant that guides you when you're stuck.
+                </p>
+</div>
+</div>
+<!-- Footer / Controls -->
+<div class="w-full max-w-md mx-auto px-6 pb-8 pt-4 flex flex-col items-center gap-8">
+<!-- Page Indicators -->
+<div class="flex flex-row items-center justify-center gap-3">
+<!-- Dot 1 -->
+<div class="h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-white/20 transition-all duration-300"></div>
+<!-- Dot 2 (Active) -->
+<div class="h-2.5 w-8 rounded-full bg-primary shadow-[0_0_10px_rgba(48,232,122,0.5)] transition-all duration-300"></div>
+<!-- Dot 3 -->
+<div class="h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-white/20 transition-all duration-300"></div>
+</div>
+<!-- Continue Button -->
+<a href="../onboarding__build_projects/index.html" class="w-full bg-primary hover:bg-primary/90 active:scale-[0.98] text-primary-content h-14 rounded-full font-bold text-lg tracking-wide transition-all shadow-lg flex items-center justify-center gap-2 group">
+                Continue
+                <span class="material-symbols-outlined text-primary-content group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</body></html>

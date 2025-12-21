@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coding Exercise</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "surface-dark": "#2d241b",
+                        "surface-lighter": "#3d3226"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "mono": ["Fira Code", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scrolling elements */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary/30">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto overflow-hidden shadow-2xl">
+<!-- Top App Bar -->
+<header class="flex items-center px-4 py-3 justify-between sticky top-0 z-20 bg-background-light dark:bg-background-dark">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Daily Challenge</h2>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px; font-variation-settings: 'FILL' 1;">lightbulb</span>
+</button>
+</header>
+<!-- Progress Bar -->
+<div class="px-4 pb-4">
+<div class="flex justify-between items-center mb-2">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Daily Goal</p>
+<p class="text-xs font-bold text-primary">65%</p>
+</div>
+<div class="h-1.5 w-full rounded-full bg-slate-200 dark:bg-surface-lighter overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500" style="width: 65%;"></div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto pb-24 hide-scrollbar">
+<!-- Problem Header -->
+<div class="px-4 pt-2">
+<h1 class="text-2xl font-bold leading-tight mb-3">Reverse a String</h1>
+<!-- Chips -->
+<div class="flex gap-2 flex-wrap mb-4">
+<span class="flex h-7 items-center justify-center px-3 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold">
+                        Easy
+                    </span>
+<span class="flex h-7 items-center justify-center px-3 rounded-lg bg-slate-200 dark:bg-surface-lighter text-slate-700 dark:text-slate-300 text-xs font-medium">
+                        Strings
+                    </span>
+<span class="flex h-7 items-center justify-center px-3 rounded-lg bg-slate-200 dark:bg-surface-lighter text-slate-700 dark:text-slate-300 text-xs font-medium">
+                        Python
+                    </span>
+</div>
+</div>
+<!-- Accordion: Problem Description -->
+<div class="px-4 mb-6">
+<details class="group rounded-xl border border-slate-200 dark:border-surface-lighter bg-white dark:bg-surface-dark overflow-hidden transition-all" open="">
+<summary class="flex cursor-pointer items-center justify-between p-4 list-none select-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">description</span>
+<span class="text-sm font-semibold">Problem Description</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300" style="font-size: 20px;">keyboard_arrow_down</span>
+</summary>
+<div class="px-4 pb-4 pt-0">
+<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                            Write a function that reverses a string. The input string is given as an array of characters <code class="bg-slate-100 dark:bg-black/30 px-1 py-0.5 rounded text-primary font-mono text-xs">s</code>.
+                            <br/><br/>
+                            You must do this by modifying the input array in-place with O(1) extra memory.
+                        </p>
+</div>
+</details>
+</div>
+<!-- Code Editor Area -->
+<div class="px-4 mb-2">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Solution.py</span>
+<button class="text-xs text-primary hover:text-orange-400 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">restart_alt</span>
+                        Reset Code
+                    </button>
+</div>
+<div class="relative rounded-xl overflow-hidden bg-[#1e1e1e] shadow-lg border border-slate-200 dark:border-surface-lighter group focus-within:ring-2 focus-within:ring-primary/50 transition-all">
+<!-- Editor Header/Tab -->
+<div class="flex items-center bg-[#252526] px-4 py-2 border-b border-[#333]">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+<div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+<div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+</div>
+</div>
+<!-- Editor Body -->
+<div class="flex min-h-[220px] font-mono text-sm leading-6 p-4">
+<!-- Line Numbers -->
+<div class="flex flex-col text-right pr-4 text-gray-600 select-none border-r border-[#333] mr-4 w-8">
+<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+</div>
+<!-- Code Content -->
+<div class="w-full bg-transparent border-0 text-gray-100 focus:ring-0 p-0 whitespace-pre outline-none overflow-x-auto" contenteditable="true" spellcheck="false">
+<span class="text-[#f48c25] font-bold">def</span> <span class="text-[#ffd700]">reverseString</span>(s):
+    <span class="text-gray-500 italic">"""
+    Do not return anything, modify s in-place instead.
+    """</span>
+<span class="text-[#da70d6]">left</span>, <span class="text-[#da70d6]">right</span> = <span class="text-[#9cdcfe]">0</span>, <span class="text-[#f48c25]">len</span>(s) - <span class="text-[#9cdcfe]">1</span>
+<span class="text-[#f48c25] font-bold">while</span> left &lt; right:
+        s[left], s[right] = s[right], s[left]
+        left += <span class="text-[#9cdcfe]">1</span>
+</div>
+</div>
+<!-- Drag Handle visual -->
+<div class="absolute bottom-1 right-1 pointer-events-none">
+<span class="material-symbols-outlined text-gray-600 rotate-45" style="font-size: 16px;">drag_handle</span>
+</div>
+</div>
+</div>
+<!-- Helper Keys Row -->
+<div class="pl-4 mt-2 mb-4 overflow-x-auto hide-scrollbar w-full">
+<div class="flex gap-2 w-max pr-4">
+<button class="h-10 min-w-[3rem] px-2 rounded-lg bg-slate-200 dark:bg-surface-lighter active:bg-primary active:text-white dark:active:bg-primary transition-colors text-slate-700 dark:text-gray-200 font-mono text-sm font-medium shadow-sm">Tab</button>
+<button class="h-10 min-w-[3rem] px-2 rounded-lg bg-slate-200 dark:bg-surface-lighter active:bg-primary active:text-white dark:active:bg-primary transition-colors text-slate-700 dark:text-gray-200 font-mono text-sm font-medium shadow-sm">:</button>
+<button class="h-10 min-w-[3rem] px-2 rounded-lg bg-slate-200 dark:bg-surface-lighter active:bg-primary active:text-white dark:active:bg-primary transition-colors text-slate-700 dark:text-gray-200 font-mono text-sm font-medium shadow-sm">(</button>
+<button class="h-10 min-w-[3rem] px-2 rounded-lg bg-slate-200 dark:bg-surface-lighter active:bg-primary active:text-white dark:active:bg-primary transition-colors text-slate-700 dark:text-gray-200 font-mono text-sm font-medium shadow-sm">)</button>
+<button class="h-10 min-w-[3rem] px-2 rounded-lg bg-slate-200 dark:bg-surface-lighter active:bg-primary active:text-white dark:active:bg-primary transition-colors text-slate-700 dark:text-gray-200 font-mono text-sm font-medium shadow-sm">[</button>
+<button class="h-10 min-w-[3rem] px-2 rounded-lg bg-slate-200 dark:bg-surface-lighter active:bg-primary active:text-white dark:active:bg-primary transition-colors text-slate-700 dark:text-gray-200 font-mono text-sm font-medium shadow-sm">]</button>
+<button class="h-10 min-w-[3rem] px-2 rounded-lg bg-slate-200 dark:bg-surface-lighter active:bg-primary active:text-white dark:active:bg-primary transition-colors text-slate-700 dark:text-gray-200 font-mono text-sm font-medium shadow-sm">"</button>
+<button class="h-10 min-w-[3rem] px-2 rounded-lg bg-slate-200 dark:bg-surface-lighter active:bg-primary active:text-white dark:active:bg-primary transition-colors text-slate-700 dark:text-gray-200 font-mono text-sm font-medium shadow-sm">=</button>
+<button class="h-10 min-w-[3rem] px-2 rounded-lg bg-slate-200 dark:bg-surface-lighter active:bg-primary active:text-white dark:active:bg-primary transition-colors text-slate-700 dark:text-gray-200 font-mono text-sm font-medium shadow-sm">return</button>
+</div>
+</div>
+<!-- Output/Console Section -->
+<div class="px-4 mb-4">
+<div class="rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-surface-lighter overflow-hidden">
+<div class="flex border-b border-slate-200 dark:border-surface-lighter">
+<button class="flex-1 py-3 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 dark:bg-primary/10">Output</button>
+<button class="flex-1 py-3 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">Test Cases</button>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-[#1a1a1a] min-h-[100px] font-mono text-xs">
+<div class="flex items-center gap-2 text-green-600 dark:text-green-400 mb-2">
+<span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
+<span>Compiled Successfully</span>
+</div>
+<p class="text-slate-600 dark:text-slate-300">
+                            &gt; Input: ["h","e","l","l","o"]<br/>
+                            &gt; Output: ["o","l","l","e","h"]<br/>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 w-full max-w-md mx-auto bg-background-light dark:bg-background-dark/95 backdrop-blur-md border-t border-slate-200 dark:border-surface-lighter p-4 z-30 pb-6">
+<div class="flex gap-3">
+<button class="flex-1 h-12 rounded-xl border border-slate-300 dark:border-surface-lighter bg-white dark:bg-surface-dark text-slate-900 dark:text-white font-bold text-base hover:bg-slate-50 dark:hover:bg-surface-lighter transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined filled" style="font-size: 20px;">play_arrow</span>
+                    Run Code
+                </button>
+<button class="flex-1 h-12 rounded-xl bg-primary text-white font-bold text-base hover:bg-orange-600 shadow-lg shadow-primary/25 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">check</span>
+                    Submit
+                </button>
+</div>
+</div>
+</div>
+</body></html>
