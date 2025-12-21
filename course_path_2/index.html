@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Journey - Course Path</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25", // Vibrant Orange
+                        "primary-dark": "#d67618", // Darker Orange for shadow
+                        "secondary": "#58cc02", // Success Green (optional accent)
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#131f24", // Darker blue-grey for dark mode
+                        "card-light": "#ffffff",
+                        "card-dark": "#202f36",
+                        "locked": "#e5e7eb",
+                        "locked-shadow": "#d1d5db",
+                        "completed": "#ffc800", // Gold
+                        "completed-shadow": "#e5b400",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'btn': '0 4px 0 0',
+                        'btn-lg': '0 6px 0 0',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 600,
+            'GRAD' 0,
+            'opsz' 24
+        }
+
+        /* Floating animation for the active node */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-300">
+<!-- Mobile Container -->
+<div class="relative flex h-screen w-full flex-col mx-auto max-w-md bg-background-light dark:bg-background-dark overflow-hidden shadow-2xl border-x border-gray-100 dark:border-gray-800">
+<!-- Sticky Header & Stats -->
+<header class="flex-none bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm z-30 border-b border-gray-200 dark:border-gray-800 transition-colors">
+<!-- Top App Bar -->
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3">
+<!-- Profile Image -->
+<div class="relative group cursor-pointer">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-gray-200 dark:border-gray-700" data-alt="User profile picture showing a cartoon avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCo0ZPwlcHCmhv353KIX02IJwos3AjwGAuhI1EruOVM6WMBL8vZNriV8JpxbumT4EXy71kLf_inXs3ejjTkotKX2H2THbadCM9wG3qtNslvmmOIUkfgPzzPZTcYqBgUmb_p04xROtFeO-6NP3JB-M6aihamXB5ZNpcxMdavdWvkBoL_iokKAmk-9Yyo5w3gOhALbsLqfxommWszLKUPvGK68cTHhAkbwMEsA_mm89CXrNiR5qi93J0tRzn2Fv72uQkI0_bt_wLEP57J");'>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-secondary rounded-full border-2 border-white dark:border-background-dark p-[2px]">
+<span class="material-symbols-outlined text-white text-[10px]">edit</span>
+</div>
+</div>
+</div>
+<h2 class="text-lg font-extrabold tracking-tight text-slate-700 dark:text-slate-200">Python Journey</h2>
+<button class="flex items-center justify-center size-10 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500">settings</span>
+</button>
+</div>
+<!-- Profile Stats Scrollable Row -->
+<div class="flex overflow-x-auto no-scrollbar gap-3 px-4 pb-3">
+<!-- Streak -->
+<div class="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-card-dark shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">local_fire_department</span>
+<span class="font-bold text-primary text-sm">12</span>
+</div>
+<!-- Gems -->
+<div class="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-card-dark shrink-0">
+<span class="material-symbols-outlined text-blue-400 text-xl">diamond</span>
+<span class="font-bold text-blue-400 text-sm">450</span>
+</div>
+<!-- Hearts -->
+<div class="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-card-dark shrink-0">
+<span class="material-symbols-outlined text-red-500 text-xl">favorite</span>
+<span class="font-bold text-red-500 text-sm">5</span>
+</div>
+</div>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 overflow-y-auto overflow-x-hidden relative pb-24 no-scrollbar">
+<!-- Unit Header Card -->
+<div class="px-4 pt-6 pb-2">
+<div class="bg-primary rounded-2xl p-5 text-white shadow-lg relative overflow-hidden group">
+<!-- Background decoration -->
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-xl group-hover:scale-110 transition-transform duration-500"></div>
+<div class="absolute -left-4 -bottom-4 w-20 h-20 bg-black/5 rounded-full blur-lg"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<h3 class="text-xl font-extrabold mb-1">Unit 3</h3>
+<p class="text-white/90 font-medium text-sm">Functions &amp; Loops</p>
+</div>
+<a class="bg-white/20 hover:bg-white/30 transition-colors p-2 rounded-xl backdrop-blur-sm" href="#">
+<span class="material-symbols-outlined text-white text-xl">menu_book</span>
+</a>
+</div>
+<!-- Progress -->
+<div class="mt-6 flex items-center gap-3">
+<div class="flex-1 h-3 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-white rounded-full w-[35%] shadow-sm"></div>
+</div>
+<span class="text-xs font-bold text-white/90">3/8</span>
+</div>
+</div>
+</div>
+<!-- Path Container -->
+<div class="relative w-full py-8 flex flex-col items-center gap-0">
+<!-- Path Visual Background (SVG) - A winding line -->
+<!-- Note: The height needs to be adjusted based on content, using a repeating pattern or large SVG -->
+<svg class="absolute top-8 left-0 w-full h-[800px] pointer-events-none z-0 opacity-20 dark:opacity-10" xmlns="http://www.w3.org/2000/svg">
+<!-- Simplified representation of a winding path -->
+<path class="text-gray-400" d="M 50% 40 Q 20% 120, 50% 200 T 50% 360 T 50% 520 T 50% 680" fill="none" stroke="currentColor" stroke-width="8"></path>
+</svg>
+<!-- Lesson 1: Variables (Completed) - Center -->
+<div class="relative z-10 flex flex-col items-center mb-4">
+<button class="group relative flex items-center justify-center w-20 h-20 rounded-full bg-completed shadow-btn-lg shadow-completed-shadow text-white mb-2 hover:brightness-110 active:shadow-none active:translate-y-[6px] transition-all">
+<span class="material-symbols-outlined text-4xl drop-shadow-sm">check</span>
+<!-- Tooltip/Stars -->
+<div class="absolute -top-1 -right-1 flex">
+<span class="material-symbols-outlined text-yellow-200 text-xl drop-shadow-md">star</span>
+</div>
+</button>
+<!-- Label -->
+<!-- <span class="text-xs font-bold text-gray-500 dark:text-gray-400">Variables</span> -->
+</div>
+<!-- Connector SVG (Center to Left) -->
+<div class="h-12 w-full max-w-[120px] relative -my-2 mr-16 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="dark:stroke-gray-700" d="M 100 0 Q 100 50, 50 100" fill="none" stroke="#e5e7eb" stroke-dasharray="12 12" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+</div>
+<!-- Lesson 2: Data Types (Completed) - Offset Left -->
+<div class="relative z-10 flex flex-col items-center mr-24 mb-4">
+<button class="group relative flex items-center justify-center w-16 h-16 rounded-full bg-completed shadow-btn shadow-completed-shadow text-white hover:brightness-110 active:shadow-none active:translate-y-[4px] transition-all">
+<span class="material-symbols-outlined text-3xl">play_arrow</span>
+</button>
+</div>
+<!-- Connector SVG (Left to Center) -->
+<div class="h-12 w-full max-w-[120px] relative -my-2 mr-16 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="dark:stroke-gray-700" d="M 50 0 Q 100 50, 100 100" fill="none" stroke="#e5e7eb" stroke-dasharray="12 12" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+</div>
+<!-- Lesson 3: Functions (Active) - Center -->
+<div class="relative z-10 flex flex-col items-center mb-4 mt-2">
+<!-- Ripple Effect -->
+<div class="absolute inset-0 bg-primary/20 rounded-full animate-ping scale-110"></div>
+<button class="animate-float group relative flex items-center justify-center w-24 h-24 rounded-full bg-primary shadow-btn-lg shadow-primary-dark text-white hover:brightness-105 active:shadow-none active:translate-y-[6px] transition-all border-4 border-white dark:border-background-dark">
+<span class="material-symbols-outlined text-5xl">code</span>
+<!-- "START" Bubble -->
+<div class="absolute -top-12 bg-white dark:bg-card-dark px-3 py-1.5 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 whitespace-nowrap animate-bounce">
+<span class="text-primary font-bold text-sm tracking-wide">START</span>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-white dark:bg-card-dark rotate-45 border-r border-b border-gray-100 dark:border-gray-700"></div>
+</div>
+</button>
+<span class="mt-3 text-sm font-bold text-slate-800 dark:text-slate-200 bg-white/80 dark:bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">Functions</span>
+</div>
+<!-- Connector SVG (Center to Right) -->
+<div class="h-12 w-full max-w-[120px] relative -my-2 ml-16 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="dark:stroke-gray-700" d="M 0 0 Q 0 50, 50 100" fill="none" stroke="#e5e7eb" stroke-dasharray="12 12" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+</div>
+<!-- Lesson 4: Loops (Locked) - Offset Right -->
+<div class="relative z-10 flex flex-col items-center ml-24 mb-4">
+<button class="relative flex items-center justify-center w-16 h-16 rounded-full bg-locked shadow-btn shadow-locked-shadow text-gray-400 dark:bg-gray-800 dark:shadow-gray-900 dark:text-gray-600 active:shadow-none active:translate-y-[4px] transition-all cursor-not-allowed">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</button>
+</div>
+<!-- Connector SVG (Right to Center) -->
+<div class="h-12 w-full max-w-[120px] relative -my-2 ml-16 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="dark:stroke-gray-700" d="M 50 0 Q 0 50, 0 100" fill="none" stroke="#e5e7eb" stroke-dasharray="12 12" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+</div>
+<!-- Lesson 5: Lists (Locked) - Center -->
+<div class="relative z-10 flex flex-col items-center mb-4">
+<button class="relative flex items-center justify-center w-20 h-20 rounded-full bg-locked shadow-btn-lg shadow-locked-shadow text-gray-400 dark:bg-gray-800 dark:shadow-gray-900 dark:text-gray-600 cursor-not-allowed">
+<span class="material-symbols-outlined text-3xl">data_array</span>
+</button>
+</div>
+<!-- Straight line down -->
+<div class="h-10 w-2 bg-locked dark:bg-gray-700 rounded-full -my-1"></div>
+<div class="h-3 w-2 bg-locked dark:bg-gray-700 rounded-full mb-1"></div>
+<!-- Chest (Locked) -->
+<div class="relative z-10 flex flex-col items-center mt-2">
+<button class="relative flex items-center justify-center w-24 h-20 rounded-2xl bg-locked shadow-btn-lg shadow-locked-shadow text-gray-400 dark:bg-gray-800 dark:shadow-gray-900 dark:text-gray-600 cursor-not-allowed px-4">
+<span class="material-symbols-outlined text-4xl">inventory_2</span>
+</button>
+<span class="mt-2 text-xs font-bold text-gray-400 uppercase tracking-wider">Unit Chest</span>
+</div>
+</div>
+<!-- Bottom Spacer -->
+<div class="h-10"></div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="flex-none bg-white dark:bg-card-dark border-t border-gray-200 dark:border-gray-800 px-6 py-2 z-50 safe-area-bottom">
+<ul class="flex justify-between items-center">
+<!-- Tab 1: Home (Active) -->
+<li>
+<a class="flex flex-col items-center gap-1 p-2 rounded-xl group" href="#">
+<div class="bg-primary/10 dark:bg-primary/20 p-1.5 px-4 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px] group-hover:scale-110 transition-transform">school</span>
+</div>
+<span class="text-[10px] font-bold text-primary">Learn</span>
+</a>
+</li>
+<!-- Tab 2: Leaderboard -->
+<li>
+<a class="flex flex-col items-center gap-1 p-2 rounded-xl group" href="#">
+<div class="p-1.5 px-4 rounded-full transition-colors hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-gray-400 text-[28px] group-hover:scale-110 transition-transform">leaderboard</span>
+</div>
+<span class="text-[10px] font-bold text-gray-400 group-hover:text-gray-500">Rank</span>
+</a>
+</li>
+<!-- Tab 3: Quests -->
+<li>
+<a class="flex flex-col items-center gap-1 p-2 rounded-xl group" href="#">
+<div class="p-1.5 px-4 rounded-full transition-colors hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-gray-400 text-[28px] group-hover:scale-110 transition-transform">swords</span>
+</div>
+<span class="text-[10px] font-bold text-gray-400 group-hover:text-gray-500">Quests</span>
+</a>
+</li>
+<!-- Tab 4: Shop -->
+<li>
+<a class="flex flex-col items-center gap-1 p-2 rounded-xl group" href="#">
+<div class="p-1.5 px-4 rounded-full transition-colors hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-gray-400 text-[28px] group-hover:scale-110 transition-transform">storefront</span>
+</div>
+<span class="text-[10px] font-bold text-gray-400 group-hover:text-gray-500">Shop</span>
+</a>
+</li>
+<!-- Tab 5: Profile -->
+<li>
+<a class="flex flex-col items-center gap-1 p-2 rounded-xl group" href="#">
+<div class="p-1.5 px-4 rounded-full transition-colors hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-gray-400 text-[28px] group-hover:scale-110 transition-transform">person</span>
+</div>
+<span class="text-[10px] font-bold text-gray-400 group-hover:text-gray-500">Profile</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Floating Action Button (Optional Practice) -->
+<button class="absolute bottom-24 right-4 z-40 bg-white dark:bg-card-dark border-2 border-gray-200 dark:border-gray-700 p-3 rounded-2xl shadow-lg shadow-gray-200/50 dark:shadow-black/50 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">fitness_center</span>
+</button>
+</div>
+</body></html>

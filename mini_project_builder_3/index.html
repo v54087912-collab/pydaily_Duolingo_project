@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mini Project Builder</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c241b",
+                        "text-primary-light": "#181411",
+                        "text-primary-dark": "#f8f7f5",
+                        "text-secondary-light": "#8a7560",
+                        "text-secondary-dark": "#b0a69e",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "mono": ["Courier Prime", "Courier New", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for editor */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header & Progress -->
+<header class="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center justify-between p-4 pb-2">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-text-primary-light dark:text-text-primary-dark">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight flex-1 text-center pr-10">Temperature Converter</h1>
+</div>
+<div class="px-4 pb-4 pt-2">
+<div class="flex justify-between items-end mb-2">
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">Project Progress</span>
+<span class="text-sm font-bold text-primary">33%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-[#e6e0db] dark:bg-[#3a3a3a] overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500 ease-out" style="width: 33%;"></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col gap-6 p-4 pb-32">
+<!-- Reward Badge Card -->
+<section>
+<div class="group relative overflow-hidden rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-gray-800 p-4 transition-all hover:shadow-md">
+<div class="absolute top-0 right-0 p-3 opacity-10">
+<span class="material-symbols-outlined text-[120px] leading-none text-primary transform rotate-12">military_tech</span>
+</div>
+<div class="flex items-center gap-4 relative z-10">
+<div class="flex-shrink-0 size-20 rounded-lg overflow-hidden bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center border border-orange-200 dark:border-orange-800/30">
+<!-- Using a placeholder for the badge icon -->
+<img alt="Badge Icon" class="size-12 object-contain drop-shadow-sm" data-alt="Golden shield badge with a star indicating achievement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd07Hr8WDjViChhg-XjoRYy7ilayLCfHAQzXZ9WxZ9ZdcDyNoxZrgPhF0MC4pmFT6oYfGagJI1ZEnlecmck4VyAkat0ksXEyyqfm41NRPhb1kbB2lYBxpFiX8aCffHoaJZqEXcHnDZW34SotdNtk2J4b6M5wF5Jng1lbq-Ps3AO9btQsLw1_WWjQgdxRguO8r4sCw-pTtvrEBhztG782Qs2GFq6w0ikdKuPorNLWXHOWIINml2f49Bgwey7COqhs1dKiMhlTkkmcy1"/>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<span class="text-xs font-bold text-primary uppercase tracking-wide">Target Reward</span>
+<h3 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight">Python Basics Badge</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm">Complete all steps to unlock this achievement.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Checklist Section -->
+<section>
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-xl font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                    Tasks
+                </h2>
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden divide-y divide-gray-100 dark:divide-gray-800" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(255,255,255)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');">
+<!-- Completed Item -->
+<label class="group flex items-start gap-4 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<div class="relative flex items-center pt-1">
+<input checked="" class="peer size-6 rounded border-2 border-gray-300 dark:border-gray-600 text-primary focus:ring-0 focus:ring-offset-0 bg-transparent checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] transition-all" type="checkbox"/>
+</div>
+<div class="flex flex-col opacity-50 peer-checked:opacity-100 transition-opacity">
+<span class="text-text-primary-light dark:text-text-primary-dark font-medium line-through peer-checked:no-underline decoration-gray-400">Define function to_celsius</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-0.5">Start with `def` keyword</span>
+</div>
+</label>
+<!-- Active Item -->
+<label class="group flex items-start gap-4 p-4 cursor-pointer bg-primary/5 border-l-4 border-l-primary">
+<div class="relative flex items-center pt-1">
+<input class="peer size-6 rounded border-2 border-gray-300 dark:border-gray-600 text-primary focus:ring-0 focus:ring-offset-0 bg-transparent checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] transition-all" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="text-text-primary-light dark:text-text-primary-dark font-bold text-lg">Take user input</span>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark mt-1">Use the `input()` function to get a value from the user.</span>
+</div>
+</label>
+<!-- Pending Item -->
+<label class="group flex items-start gap-4 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<div class="relative flex items-center pt-1">
+<input class="peer size-6 rounded border-2 border-gray-300 dark:border-gray-600 text-primary focus:ring-0 focus:ring-offset-0 bg-transparent checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] transition-all" type="checkbox"/>
+</div>
+<div class="flex flex-col opacity-70">
+<span class="text-text-primary-light dark:text-text-primary-dark font-medium">Print the result</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-0.5">Output the converted value</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Code Editor Section -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">code</span>
+                        Workspace
+                    </h2>
+<button class="text-xs font-medium text-primary hover:text-primary/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+                        Reset
+                    </button>
+</div>
+<div class="relative rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-[#f4f4f5] dark:bg-[#1e1e1e] shadow-inner">
+<!-- Fake Tab Bar -->
+<div class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-[#2d2d2d] border-b border-gray-300 dark:border-gray-700">
+<div class="flex gap-1.5">
+<div class="size-3 rounded-full bg-red-400"></div>
+<div class="size-3 rounded-full bg-yellow-400"></div>
+<div class="size-3 rounded-full bg-green-400"></div>
+</div>
+<span class="ml-4 text-xs font-mono text-gray-500 dark:text-gray-400">main.py</span>
+</div>
+<div class="flex min-h-[200px]">
+<!-- Line Numbers -->
+<div class="flex flex-col items-end px-2 py-4 bg-gray-200/50 dark:bg-[#252525] border-r border-gray-200 dark:border-gray-700 select-none">
+<span class="text-xs font-mono text-gray-400 leading-6">1</span>
+<span class="text-xs font-mono text-gray-400 leading-6">2</span>
+<span class="text-xs font-mono text-gray-400 leading-6">3</span>
+<span class="text-xs font-mono text-gray-400 leading-6">4</span>
+<span class="text-xs font-mono text-gray-400 leading-6">5</span>
+<span class="text-xs font-mono text-gray-400 leading-6">6</span>
+</div>
+<!-- Text Area -->
+<textarea class="flex-1 w-full bg-transparent p-4 font-mono text-sm leading-6 resize-none focus:outline-none text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-600" placeholder="# Write your python code here..." spellcheck="false">def to_celsius(fahrenheit):
+    celsius = (fahrenheit - 32) * 5/9
+    return celsius
+
+# Step 2: Take user input
+</textarea>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Action Bar -->
+<footer class="fixed bottom-0 left-0 w-full bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 p-4 pb-8 z-30 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+<div class="flex gap-3 max-w-md mx-auto">
+<button class="flex-1 px-4 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600 text-text-primary-light dark:text-text-primary-dark font-bold text-sm bg-transparent hover:bg-gray-50 dark:hover:bg-white/5 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+                    Run Code
+                </button>
+<button class="flex-[2] px-6 py-3.5 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold text-sm shadow-lg shadow-primary/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-[20px] group-hover:animate-pulse">auto_awesome</span>
+                    AI Review
+                </button>
+</div>
+</footer>
+</div>
+</body></html>
